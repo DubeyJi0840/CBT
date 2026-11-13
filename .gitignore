@@ -1,0 +1,27 @@
+# Dependency directories
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Source PDFs (excluded from published site to avoid GitHub 100MB file size limit)
+questions/
+*.pdf
+
+# Temporary OCR and extraction assets
+key_images/
+temp_*.png
+temp_*.jpg
+*.log
+test_extracted.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+

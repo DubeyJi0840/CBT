@@ -1,0 +1,370 @@
+/* ==========================================================================
+   LIS CBT Examination Platform - Responsive & Mobile Layout Stylesheet
+   ========================================================================== */
+
+/* --- Tablet and Medium Screens (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+  .exam-layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .palette-sidebar {
+    position: fixed;
+    top: 70px;
+    right: -360px;
+    width: 340px;
+    height: calc(100vh - 70px);
+    z-index: 500;
+    box-shadow: -4px 0 16px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .palette-sidebar.open {
+    right: 0;
+  }
+
+  .btn-toggle-palette {
+    display: inline-flex !important;
+  }
+
+  .score-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .score-hero-box {
+    padding: 20px 16px;
+  }
+
+  .header-inner {
+    padding: 8px 12px;
+  }
+
+  .brand-sub {
+    display: none;
+  }
+}
+
+/* --- Mobile Devices (max-width: 768px) --- */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  /* Header adjustments */
+  .cbt-header {
+    position: sticky;
+    top: 0;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .brand-section {
+    gap: 8px;
+  }
+
+  .brand-logo-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .brand-text h1 {
+    font-size: 0.98rem;
+  }
+
+  .candidate-profile-chip {
+    display: none; /* Hide avatar chip on small mobile to save space */
+  }
+
+  .timer-badge {
+    font-size: 1rem;
+    padding: 4px 10px;
+  }
+
+  /* Welcome card */
+  .welcome-card {
+    margin: 12px auto;
+    padding: 16px;
+  }
+
+  .welcome-title-bar h2 {
+    font-size: 1.25rem;
+  }
+
+  .instructions-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .inst-tile {
+    padding: 10px 8px;
+  }
+
+  .inst-tile .inst-value {
+    font-size: 1.2rem;
+  }
+
+  .instructions-text-panel {
+    padding: 14px;
+    font-size: 0.85rem;
+  }
+
+  /* Live Exam View */
+  .question-card-main {
+    min-height: auto;
+    border-radius: var(--radius-md);
+  }
+
+  .question-top-bar {
+    padding: 10px 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .q-left-info {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .question-body {
+    padding: 16px 12px;
+  }
+
+  .question-prompt {
+    font-size: 0.98rem;
+    margin-bottom: 16px;
+  }
+
+  .prompt-hi {
+    font-size: 0.95rem;
+    padding: 6px 10px;
+  }
+
+  .option-row {
+    padding: 10px 12px;
+    gap: 10px;
+    min-height: 48px; /* Touch-friendly tap target */
+  }
+
+  .option-letter {
+    min-width: 20px;
+    font-size: 0.9rem;
+  }
+
+  .option-text {
+    font-size: 0.9rem;
+  }
+
+  /* Bottom Action Bar */
+  .exam-action-bar {
+    position: sticky;
+    bottom: 0;
+    z-index: 90;
+    background: #ffffff;
+    box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.08);
+    padding: 10px 8px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .action-group-left, .action-group-right {
+    width: 100%;
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    font-size: 0.82rem;
+    flex: 1;
+    text-align: center;
+  }
+
+  .btn-lg {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+
+  /* Palette Sidebar mobile drawer */
+  .palette-sidebar {
+    width: 85vw;
+    right: -85vw;
+    top: 60px;
+    height: calc(100vh - 60px);
+    padding: 12px;
+  }
+
+  .palette-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    max-height: calc(100vh - 280px);
+  }
+
+  .palette-btn {
+    font-size: 0.78rem;
+    min-height: 36px;
+  }
+
+  /* Modal Dialog */
+  .modal-card {
+    padding: 16px;
+    width: 95%;
+  }
+
+  .modal-header h3 {
+    font-size: 1.15rem;
+  }
+
+  .modal-table td {
+    padding: 6px 8px;
+    font-size: 0.85rem;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .modal-actions .btn {
+    width: 100%;
+  }
+
+  /* Result View */
+  .result-card {
+    padding: 16px;
+    margin: 12px auto;
+  }
+
+  .score-big {
+    font-size: 2.3rem;
+  }
+
+  .score-max {
+    font-size: 1.1rem;
+  }
+
+  .breakdown-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-actions-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .result-actions-bar .btn {
+    width: 100%;
+  }
+
+  /* Review View */
+  .review-header-bar {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px;
+  }
+
+  .review-header-actions {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+  }
+
+  .review-header-actions .btn {
+    flex: 1;
+  }
+
+  .review-filter-bar {
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px 12px;
+  }
+
+  .filter-btn {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
+
+  .review-item-card {
+    padding: 14px;
+  }
+
+  .review-option-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .review-footer-info {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+/* --- Palette Toggle Button Visibility Control --- */
+.btn-toggle-palette {
+  display: none;
+}
+
+/* Palette Backdrop Overlay on Mobile when open */
+.palette-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.4);
+  z-index: 490;
+}
+
+.palette-backdrop.active {
+  display: block;
+}
+
+/* --- High-contrast and Accessibility Enhancements --- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print Stylesheet for Score Card printing */
+@media print {
+  .cbt-header,
+  .exam-action-bar,
+  .palette-sidebar,
+  .result-actions-bar,
+  .review-filter-bar,
+  .review-header-actions,
+  .btn {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .result-card, .review-page {
+    box-shadow: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+}
+

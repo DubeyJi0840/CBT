@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Library & Information Science (LIS) CBT Practice Examination - National standard computer-based test platform inspired by NTA, SSC, and Railway examination interfaces.">
+  <title>LIS CBT Practice Examination | Computer Based Test Portal</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231e3a8a'><path d='M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z'/></svg>">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="cbt-header">
+    <div class="header-inner">
+      <div class="brand-section">
+        <div class="brand-logo-icon" aria-hidden="true">LIS</div>
+        <div class="brand-text">
+          <h1>LIS CBT Practice Examination</h1>
+          <div class="brand-sub">Computer Based Test (CBT) Assessment System</div>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <!-- Live Countdown Timer (Visible in Exam View) -->
+        <div id="timer-badge" class="timer-badge timer-normal" title="Time Remaining" role="timer" aria-live="polite">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span id="timer-display">90:00</span>
+        </div>
+
+        <!-- Candidate Profile Information Area -->
+        <div class="candidate-profile-chip" title="Candidate Examination Credentials">
+          <div class="candidate-avatar" aria-hidden="true">LIS</div>
+          <div class="candidate-details">
+            <div class="c-name">CANDIDATE: LIS ASPIRANT</div>
+            <div class="c-roll">ROLL NO: CBT-2026-LIS</div>
+          </div>
+        </div>
+
+        <!-- Fullscreen Mode Button -->
+        <button id="btn-fullscreen" class="btn btn-outline" style="color: #ffffff; border-color: rgba(255,255,255,0.4);" title="Toggle Fullscreen Exam Mode" aria-label="Toggle Fullscreen">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+          </svg>
+          <span class="fs-text">Fullscreen</span>
+        </button>
+
+        <!-- Mobile Palette Toggle Button -->
+        <button id="btn-toggle-palette" class="btn btn-secondary btn-toggle-palette" aria-label="Toggle Question Palette">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          Palette
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main class="container">
+
+    <!-- =======================================================================
+         VIEW 1: WELCOME & INSTRUCTIONS
+         ======================================================================= -->
+    <section id="view-welcome" class="welcome-section" aria-labelledby="welcome-title">
+      <div class="welcome-card">
+        
+        <!-- Active Session Resume Banner -->
+        <div id="banner-resume" class="alert-banner alert-warning hidden" role="alert">
+          <div>
+            <strong>Active Examination Found!</strong>
+            <p class="resume-text">You have an active in-progress exam attempt.</p>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button id="btn-resume-session" class="btn btn-success">Resume Exam</button>
+            <button id="btn-discard-session" class="btn btn-outline">Discard</button>
+          </div>
+        </div>
+
+        <!-- Previous Score Card Notification -->
+        <div id="prev-result-box" class="alert-banner alert-info hidden">
+          <div>
+            <strong>Previous Attempt Record:</strong> Score: <strong id="prev-score-val">0</strong> | Accuracy: <strong id="prev-accuracy-val">0%</strong>
+          </div>
+          <button id="btn-view-prev-result" class="btn btn-outline" style="background:#fff;">View Last Score Card</button>
+        </div>
+
+        <div class="welcome-title-bar">
+          <h2 id="welcome-title">Library & Information Science (LIS) CBT Examination</h2>
+          <p class="text-muted">General Instructions & Examination Guidelines / सामान्य निर्देश</p>
+        </div>
+
+        <!-- High-level Specification Grid -->
+        <div class="instructions-grid">
+          <div class="inst-tile">
+            <div class="inst-label">Total Questions</div>
+            <div class="inst-value">100</div>
+            <small class="text-muted">Randomized from <span id="verified-bank-count">470</span> Verified Bank</small>
+          </div>
+          <div class="inst-tile">
+            <div class="inst-label">Total Duration</div>
+            <div class="inst-value">90 Mins</div>
+            <small class="text-muted">Absolute countdown timer</small>
+          </div>
+          <div class="inst-tile">
+            <div class="inst-label">Marking Scheme</div>
+            <div class="inst-value" style="color: var(--cbt-green);">+1.00 / -0.25</div>
+            <small class="text-muted">+1 Correct, -0.25 Wrong, 0 Skipped</small>
+          </div>
+          <div class="inst-tile">
+            <div class="inst-label">Maximum Marks</div>
+            <div class="inst-value">100.00</div>
+            <small class="text-muted">Negative marking applicable</small>
+          </div>
+        </div>
+
+        <!-- Detailed Government-Style Instructions Panel -->
+        <div class="instructions-text-panel">
+          <h3>Please read the following instructions carefully / कृपया निम्नलिखित निर्देशों को ध्यान से पढ़ें:</h3>
+          <ol>
+            <li><strong>Duration & Clock:</strong> The examination duration is <strong>90 minutes</strong> (1 hour 30 minutes). The countdown timer displayed on the top right shows the time remaining. When the timer reaches zero, the examination will automatically submit.</li>
+            <li><strong>Question Bank Integrity:</strong> All questions and answers strictly originate from official printed answer keys in the provided Practice Sets. <strong>Zero questions are hallucinated or generated by AI.</strong></li>
+            <li><strong>Randomization:</strong> Each examination attempt selects 100 verified MCQs via cryptographic Fisher-Yates shuffle. Both question order and option positions are shuffled independently, preserving correct answer mapping.</li>
+            <li><strong>Question Palette Symbols:</strong>
+              <ul style="margin-top: 6px; list-style-type: disc; padding-left: 20px;">
+                <li><span class="legend-box box-not-visited" style="display:inline-flex; width:16px; height:16px;"></span> <strong>Gray:</strong> You have not visited the question yet.</li>
+                <li><span class="legend-box box-not-answered" style="display:inline-flex; width:16px; height:16px;"></span> <strong>Red:</strong> You have visited the question but have not answered it.</li>
+                <li><span class="legend-box box-answered" style="display:inline-flex; width:16px; height:16px;"></span> <strong>Green:</strong> You have answered the question.</li>
+                <li><span class="legend-box box-marked" style="display:inline-flex; width:16px; height:16px;"></span> <strong>Purple:</strong> You have marked the question for review without answering.</li>
+                <li><span class="legend-box box-answered-marked" style="display:inline-flex; width:16px; height:16px;"></span> <strong>Purple with Green Dot:</strong> The question is answered and marked for review (will be evaluated).</li>
+              </ul>
+            </li>
+            <li><strong>Navigating and Saving:</strong>
+              <ul style="margin-top: 4px; list-style-type: circle; padding-left: 20px;">
+                <li>Click <strong>"Save & Next"</strong> to save your answer and navigate to the next question.</li>
+                <li>Click <strong>"Mark for Review & Next"</strong> to save your current response (if selected) and flag it for review.</li>
+                <li>Click <strong>"Clear Response"</strong> to deselect the currently chosen radio option.</li>
+                <li>Click any question number in the Question Palette to jump directly to that question.</li>
+              </ul>
+            </li>
+            <li><strong>Browser Refresh:</strong> Refreshing the browser will <strong>not</strong> lose your progress or reshuffle questions. The active attempt resumes from localStorage automatically.</li>
+          </ol>
+        </div>
+
+        <!-- Candidate Declaration Checkbox -->
+        <div class="declaration-box">
+          <input type="checkbox" id="chk-declaration" aria-label="I agree to the exam instructions">
+          <label for="chk-declaration">
+            <strong>Declaration / घोषणा:</strong> I have read and understood all the instructions given above. I understand that negative marking of 0.25 marks applies to incorrect answers. I am ready to begin the examination.
+          </label>
+        </div>
+
+        <!-- Action Button -->
+        <div class="welcome-actions">
+          <button id="btn-start-exam" class="btn btn-primary btn-lg" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            I am Ready to Begin / परीक्षा शुरू करें
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         VIEW 2: LIVE CBT EXAM
+         ======================================================================= -->
+    <section id="view-exam" class="exam-section hidden" aria-label="Active Examination Screen">
+      <div class="exam-layout-grid">
+        
+        <!-- Left: Question & Answers Main Card -->
+        <div class="question-card-main">
+          
+          <!-- Question Top Bar -->
+          <div class="question-top-bar">
+            <div class="q-left-info">
+              <span id="qno-badge" class="q-badge">Question 1</span>
+              <span id="qno-display" style="font-weight: 600; font-size: 0.9rem;">Question 1 of 100</span>
+              <span class="q-marks-pill">Marks: <span class="pos">+1.00</span> | <span class="neg">-0.25</span></span>
+            </div>
+            <div class="q-lang-selector">
+              <label for="select-lang" style="font-size: 0.82rem; font-weight: 600; margin-right: 4px;">View in:</label>
+              <select id="select-lang" aria-label="Select Question Language">
+                <option value="both" selected>English &amp; Hindi (Bilingual)</option>
+                <option value="en">English Only</option>
+                <option value="hi">Hindi Only</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Question Content & Options Body -->
+          <div class="question-body">
+            <div class="question-prompt">
+              <div id="prompt-en" class="prompt-en">Loading question text...</div>
+              <div id="prompt-hi" class="prompt-hi">हिंदी प्रश्न लोड हो रहा है...</div>
+            </div>
+
+            <!-- Four Radio Button Options Container -->
+            <fieldset class="options-container" id="options-container">
+              <legend class="sr-only" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0);">Answer Options</legend>
+              <!-- Populated dynamically by app.js -->
+            </fieldset>
+          </div>
+
+          <!-- Question Footer Source Metadata -->
+          <div class="question-footer-meta">
+            <div>Verified Source: <span id="source-ref-badge">Practice Set (Official Key)</span></div>
+            <div>Negative Marking: 0.25 Marks</div>
+          </div>
+
+          <!-- Bottom Action Buttons Bar -->
+          <div class="exam-action-bar">
+            <div class="action-group-left">
+              <button id="btn-prev" class="btn btn-outline" disabled>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                Previous
+              </button>
+              <button id="btn-clear" class="btn btn-outline" title="Clear selected option for this question">
+                Clear Response
+              </button>
+              <button id="btn-review-next" class="btn btn-warning">
+                Mark for Review &amp; Next
+              </button>
+            </div>
+
+            <div class="action-group-right">
+              <button id="btn-save-next" class="btn btn-success">
+                Save &amp; Next
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+              <button id="btn-submit-exam" class="btn btn-danger">
+                Submit Exam
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Question Palette Sidebar -->
+        <aside id="palette-sidebar" class="palette-sidebar" aria-label="Question Navigation Palette">
+          <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 10px; color: var(--primary-blue);">
+            Question Palette
+          </div>
+
+          <!-- Status Legend -->
+          <div class="palette-legend" aria-label="Status Legend">
+            <div class="legend-item">
+              <span class="legend-box box-answered" id="count-answered">0</span>
+              <span>Answered</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-box box-not-answered" id="count-not-answered">0</span>
+              <span>Not Answered</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-box box-not-visited" id="count-not-visited">100</span>
+              <span>Not Visited</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-box box-marked" id="count-marked">0</span>
+              <span>Marked Review</span>
+            </div>
+            <div class="legend-item" style="grid-column: span 2;">
+              <span class="legend-box box-answered-marked" id="count-answered-marked">0</span>
+              <span>Answered &amp; Marked for Review (Evaluated)</span>
+            </div>
+          </div>
+
+          <!-- Numbered Question Buttons Grid (1-100) -->
+          <div id="palette-grid" class="palette-grid" role="region" aria-label="Palette Questions Grid">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         VIEW 3: SUBMISSION CONFIRMATION MODAL
+         ======================================================================= -->
+    <div id="modal-confirm-submit" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-confirm-title">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3 id="modal-confirm-title">Examination Summary &amp; Submission Confirmation</h3>
+          <p class="text-muted">Please review your question attempt summary before final submission.</p>
+        </div>
+
+        <table class="modal-table">
+          <tbody>
+            <tr>
+              <td>Total Questions:</td>
+              <td id="modal-total">100</td>
+            </tr>
+            <tr>
+              <td><span style="color: var(--cbt-green); font-weight: 600;">●</span> Answered:</td>
+              <td id="modal-answered">0</td>
+            </tr>
+            <tr>
+              <td><span style="color: var(--cbt-red); font-weight: 600;">●</span> Not Answered:</td>
+              <td id="modal-not-answered">0</td>
+            </tr>
+            <tr>
+              <td><span style="color: var(--cbt-purple); font-weight: 600;">●</span> Marked for Review (Unanswered):</td>
+              <td id="modal-marked">0</td>
+            </tr>
+            <tr>
+              <td><span style="color: var(--cbt-purple); font-weight: 600;">●</span> Answered &amp; Marked for Review:</td>
+              <td id="modal-answered-marked">0</td>
+            </tr>
+            <tr>
+              <td><span style="color: var(--cbt-gray); font-weight: 600;">●</span> Not Visited:</td>
+              <td id="modal-not-visited">100</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="font-size: 0.88rem; color: #b45309; background: #fffbeb; padding: 10px; border-radius: var(--radius-sm); border: 1px solid #fde68a;">
+          <strong>Warning:</strong> Once submitted, you cannot change your answers. Are you sure you want to end this examination?
+        </p>
+
+        <div class="modal-actions">
+          <button id="btn-modal-cancel" class="btn btn-outline">
+            Return to Exam
+          </button>
+          <button id="btn-modal-confirm" class="btn btn-danger">
+            Confirm &amp; Final Submit
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         SECURITY / TAB SWITCH WARNING MODAL (ANTI-CHEAT PROCTORING)
+         ======================================================================= -->
+    <div id="modal-tab-warning" class="modal-overlay hidden" role="alertdialog" aria-modal="true" aria-labelledby="tab-warning-title">
+      <div class="modal-card" style="border-top: 5px solid #dc2626; max-width: 520px; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 8px;">⚠️</div>
+        <h3 id="tab-warning-title" style="color: #dc2626; font-size: 1.35rem; margin-bottom: 6px;">
+          SECURITY ALERT: Tab Switch Detected!
+        </h3>
+        <p style="font-weight: 700; color: #991b1b; font-size: 1rem; margin-bottom: 12px;">
+          चेतावनी: परीक्षा के दौरान टैब बदलना सख्त मना है!
+        </p>
+        <p style="font-size: 0.92rem; color: #475569; line-height: 1.5; margin-bottom: 16px;">
+          You navigated away from the active examination screen. In online CBT examinations, switching tabs, minimizing the browser, or opening other applications is treated as an unfair activity.
+        </p>
+
+        <div style="background: #fef2f2; border: 2px dashed #f87171; border-radius: 8px; padding: 14px; margin-bottom: 20px;">
+          <div style="font-size: 1.3rem; font-weight: 800; color: #dc2626;">
+            Warning <span id="tab-violation-count">1</span> of 3
+          </div>
+          <p style="font-size: 0.82rem; color: #b91c1c; margin-top: 4px;">
+            If you switch tabs <strong>3 times</strong>, your exam will be <strong>automatically terminated and submitted</strong>.
+          </p>
+        </div>
+
+        <button id="btn-tab-warning-ack" class="btn btn-danger btn-lg" style="width: 100%;">
+          Return to Examination / परीक्षा जारी रखें
+        </button>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         VIEW 4: RESULT DASHBOARD
+         ======================================================================= -->
+    <section id="view-result" class="result-section hidden" aria-labelledby="result-title">
+      <div id="result-content-container">
+        <!-- Rendered dynamically by results.js -->
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         VIEW 5: DETAILED ANSWER REVIEW
+         ======================================================================= -->
+    <section id="view-review" class="review-section hidden" aria-label="Detailed Question Review">
+      <div id="review-content-container">
+        <!-- Rendered dynamically by review.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Core JavaScript Modules -->
+  <!-- 1. Offline questions data fallback (enables zero-server file:// double-click operation) -->
+  <script src="js/embedded-questions.js"></script>
+  <!-- 2. Cryptographic Fisher-Yates shuffle engine -->
+  <script src="js/shuffle.js"></script>
+  <!-- 3. Absolute deadline countdown timer -->
+  <script src="js/timer.js"></script>
+  <!-- 4. LocalStorage attempt and result persistence manager -->
+  <script src="js/storage.js"></script>
+  <!-- 5. Question bank loader and validator -->
+  <script src="js/question-bank.js"></script>
+  <!-- 6. CBT exam state machine and scoring engine (+1 / -0.25 scheme) -->
+  <script src="js/exam-engine.js"></script>
+  <!-- 7. Score card and performance analytics renderer -->
+  <script src="js/results.js"></script>
+  <!-- 8. Detailed question-by-question answer review renderer with filters -->
+  <script src="js/review.js"></script>
+  <!-- 9. Application coordinator and event lifecycle orchestrator -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>
+

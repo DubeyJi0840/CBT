@@ -1,0 +1,223 @@
+{
+  "total_pdfs": 11,
+  "total_pages": 175,
+  "total_extracted": 671,
+  "verified_unique_count": 403,
+  "unverified_count": 268,
+  "duplicate_count": 18,
+  "pdf_inventory": [
+    {
+      "file_name": "set =1.pdf",
+      "set_id": "set_1",
+      "set_title": "Practice Set 01",
+      "total_pages": 8,
+      "extracted_question_count": 78,
+      "verified_answers": 41,
+      "unverified_answers": 37,
+      "duplicates": 0,
+      "extraction_issues": "37 unverified questions with incomplete options or OCR artifact"
+    },
+    {
+      "file_name": "set -2.pdf",
+      "set_id": "set_2",
+      "set_title": "Practice Set 02",
+      "total_pages": 8,
+      "extracted_question_count": 89,
+      "verified_answers": 53,
+      "unverified_answers": 36,
+      "duplicates": 0,
+      "extraction_issues": "36 unverified questions with incomplete options or OCR artifact"
+    },
+    {
+      "file_name": "set -3.pdf",
+      "set_id": "set_3",
+      "set_title": "Practice Set 03",
+      "total_pages": 8,
+      "extracted_question_count": 74,
+      "verified_answers": 50,
+      "unverified_answers": 24,
+      "duplicates": 0,
+      "extraction_issues": "24 unverified questions with incomplete options or OCR artifact"
+    },
+    {
+      "file_name": "set -4.pdf",
+      "set_id": "set_4",
+      "set_title": "Practice Set 04",
+      "total_pages": 8,
+      "extracted_question_count": 55,
+      "verified_answers": 42,
+      "unverified_answers": 13,
+      "duplicates": 0,
+      "extraction_issues": "13 unverified questions with incomplete options or OCR artifact"
+    },
+    {
+      "file_name": "set -5.pdf",
+      "set_id": "set_5",
+      "set_title": "Practice Set 05",
+      "total_pages": 9,
+      "extracted_question_count": 60,
+      "verified_answers": 35,
+      "unverified_answers": 25,
+      "duplicates": 0,
+      "extraction_issues": "25 unverified questions with incomplete options or OCR artifact"
+    },
+    {
+      "file_name": "set-6.pdf",
+      "set_id": "set_6",
+      "set_title": "Practice Set 06",
+      "total_pages": 9,
+      "extracted_question_count": 64,
+      "verified_answers": 47,
+      "unverified_answers": 17,
+      "duplicates": 0,
+      "extraction_issues": "17 unverified questions with incomplete options or OCR artifact"
+    },
+    {
+      "file_name": "set-7.pdf",
+      "set_id": "set_7",
+      "set_title": "Practice Set 07",
+      "total_pages": 10,
+      "extracted_question_count": 67,
+      "verified_answers": 46,
+      "unverified_answers": 21,
+      "duplicates": 0,
+      "extraction_issues": "21 unverified questions with incomplete options or OCR artifact"
+    },
+    {
+      "file_name": "set 8.pdf",
+      "set_id": "set_8",
+      "set_title": "Practice Set 08",
+      "total_pages": 9,
+      "extracted_question_count": 66,
+      "verified_answers": 39,
+      "unverified_answers": 27,
+      "duplicates": 0,
+      "extraction_issues": "27 unverified questions with incomplete options or OCR artifact"
+    },
+    {
+      "file_name": "set 9.pdf",
+      "set_id": "set_9",
+      "set_title": "Practice Set 09",
+      "total_pages": 9,
+      "extracted_question_count": 60,
+      "verified_answers": 44,
+      "unverified_answers": 16,
+      "duplicates": 0,
+      "extraction_issues": "16 unverified questions with incomplete options or OCR artifact"
+    },
+    {
+      "file_name": "set 10.pdf",
+      "set_id": "set_10",
+      "set_title": "Practice Set 10",
+      "total_pages": 9,
+      "extracted_question_count": 58,
+      "verified_answers": 33,
+      "unverified_answers": 25,
+      "duplicates": 0,
+      "extraction_issues": "25 unverified questions with incomplete options or OCR artifact"
+    },
+    {
+      "file_name": "qa.pdf",
+      "set_id": "master_booklet",
+      "set_title": "LIS Practice Sets Master Collection (Sets 01-10)",
+      "total_pages": 88,
+      "extracted_question_count": 671,
+      "verified_answers": 430,
+      "unverified_answers": 241,
+      "duplicates": 671,
+      "extraction_issues": "Master compilation booklet containing identical sets 1-10. Extracted from original constituent sets to prevent duplicate bank entries."
+    }
+  ],
+  "duplicates_list": [
+    {
+      "duplicate_id": "LIS-SET_2-Q077",
+      "original_id": "LIS-SET_2-Q054",
+      "question": "Identify the odd"
+    },
+    {
+      "duplicate_id": "LIS-SET_2-Q094",
+      "original_id": "LIS-SET_2-Q020",
+      "question": "Match the following"
+    },
+    {
+      "duplicate_id": "LIS-SET_3-Q009",
+      "original_id": "LIS-SET_2-Q020",
+      "question": "Match the following"
+    },
+    {
+      "duplicate_id": "LIS-SET_3-Q011",
+      "original_id": "LIS-SET_2-Q020",
+      "question": "-- Match the following"
+    },
+    {
+      "duplicate_id": "LIS-SET_3-Q086",
+      "original_id": "LIS-SET_2-Q054",
+      "question": "Identify the Odd"
+    },
+    {
+      "duplicate_id": "LIS-SET_4-Q040",
+      "original_id": "LIS-SET_2-Q020",
+      "question": "Match the following"
+    },
+    {
+      "duplicate_id": "LIS-SET_4-Q064",
+      "original_id": "LIS-SET_2-Q054",
+      "question": "Identify The Odd"
+    },
+    {
+      "duplicate_id": "LIS-SET_5-Q055",
+      "original_id": "LIS-SET_2-Q020",
+      "question": "Match the following"
+    },
+    {
+      "duplicate_id": "LIS-SET_5-Q057",
+      "original_id": "LIS-SET_2-Q020",
+      "question": "Match the following"
+    },
+    {
+      "duplicate_id": "LIS-SET_5-Q088",
+      "original_id": "LIS-SET_2-Q054",
+      "question": "Identify the Odd"
+    },
+    {
+      "duplicate_id": "LIS-SET_5-Q089",
+      "original_id": "LIS-SET_2-Q054",
+      "question": "Identify the Odd"
+    },
+    {
+      "duplicate_id": "LIS-SET_6-Q071",
+      "original_id": "LIS-SET_2-Q020",
+      "question": "Match the following"
+    },
+    {
+      "duplicate_id": "LIS-SET_6-Q081",
+      "original_id": "LIS-SET_2-Q020",
+      "question": "Match the following"
+    },
+    {
+      "duplicate_id": "LIS-SET_7-Q094",
+      "original_id": "LIS-SET_2-Q020",
+      "question": "Match the following"
+    },
+    {
+      "duplicate_id": "LIS-SET_7-Q097",
+      "original_id": "LIS-SET_2-Q020",
+      "question": ": Match the following"
+    },
+    {
+      "duplicate_id": "LIS-SET_7-Q099",
+      "original_id": "LIS-SET_2-Q020",
+      "question": "Match the following"
+    },
+    {
+      "duplicate_id": "LIS-SET_10-Q012",
+      "original_id": "LIS-SET_2-Q020",
+      "question": "Match the following"
+    },
+    {
+      "duplicate_id": "LIS-SET_10-Q091",
+      "original_id": "LIS-SET_2-Q054",
+      "question": "Identify The Odd"
+    }
+  ]
+}
